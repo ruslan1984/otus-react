@@ -6,7 +6,12 @@ const rl = readline.createInterface({
   });
   
   rl.question('> ', (str:string) => {
+    try{
     const result = App.main(str);
     console.log(`result: ${result}`);
-    rl.close();
+    } catch (e) {
+      console.log(e);
+    }finally{
+      rl.close();
+    }
   });
