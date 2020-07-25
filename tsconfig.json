@@ -1,27 +1,25 @@
 {
   "compilerOptions": {
-    "baseUrl": "/dist/script.js",
-    "outDir": "./dist/",
-    "paths": {
-      "types/*": ["src/types/*"],
-      "components/*": ["src/components/*"],
-      "@/*": ["src/*"]
-    },
     "target": "es5",
-    "module": "commonjs",
-    "downlevelIteration": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
-    "jsx": "react",
-    "sourceMap": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "strict": true,
-    "esModuleInterop": true
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react"
   },
   "include": [
-    "src/**/*",
-    "scripts/**/*",
-    "lessons/**/*"
-  ],
-  "exclude": [
-    "node_modules"
+    "src"
   ]
 }

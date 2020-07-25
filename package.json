@@ -1,49 +1,50 @@
 {
-  "name": "hw1",
-  "version": "1.0.0",
-  "description": "no",
-  "scripts": {
-    "build": "NODE_ENV=production babel src --out-dir dist",
-    "prepublishOnly": "npm run build",
-    "babel": "babel ./src --out-dir ./dist --extensions \".ts,.tsx\"",
-    "eslint": "eslint",
-    "test": "jest",
-    "calc": "ts-node src/ts-node.ts"
-  },
-  "author": "",
-  "license": "ISC",
+  "name": "hw2",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "@babel/cli": "^7.10.4",
-    "@babel/core": "^7.10.4",
-    "@babel/plugin-proposal-class-properties": "^7.10.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.10.4",
-    "@babel/plugin-transform-runtime": "^7.10.4",
-    "@babel/preset-env": "^7.10.4",
-    "@babel/preset-typescript": "^7.10.4",
-    "babel-loader": "^8.1.0",
-    "cross-env": "^7.0.2",
-    "eslint-loader": "^4.0.2",
-    "html-webpack-plugin": "^4.3.0",
-    "jest": "^26.1.0",
-    "jest-webpack": "^0.5.1",
-    "node-line-reader": "0.0.3",
-    "npm-watch": "^0.6.0",
-    "serve": "^11.3.2",
-    "ts-node": "^8.10.2",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12"
+    "@storybook/addon-storysource": "^5.3.19",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/jest": "^24.9.1",
+    "@types/node": "^12.12.52",
+    "@types/react": "^16.9.43",
+    "@types/react-dom": "^16.9.8",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1",
+    "typescript": "^3.7.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^3.6.1",
-    "@typescript-eslint/parser": "^3.6.1",
-    "add": "^2.0.6",
-    "eslint": "^7.5.0",
-    "eslint-plugin-react": "^7.20.3",
-    "or": "^0.2.0",
-    "prettier": "^2.0.5",
-    "prettier-webpack-plugin": "^1.2.0",
-    "ts-loader": "^8.0.0",
-    "typescript": "^3.9.6",
-    "yarn": "^1.22.4"
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-knobs": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/preset-create-react-app": "^3.1.4",
+    "@storybook/react": "^5.3.19"
   }
 }
