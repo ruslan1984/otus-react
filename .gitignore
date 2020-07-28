@@ -7,9 +7,10 @@
 
 # testing
 /coverage
-
+/.loki
 # production
 /build
+/dist
 
 # misc
 .DS_Store
@@ -23,6 +24,7 @@ yarn-debug.log*
 yarn-error.log*
 
 .vscode
-.storybook
-dist
+
+
 storybook-static
+__snapshots__
