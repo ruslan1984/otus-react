@@ -1,9 +1,15 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe( "App", () => {
+  it('9 Cell', () => {
+    const app = shallow(<App />);
+    expect(app.find('Cell').length).toBe(9);
+  });  
+} );
+
+describe( "snapshots App", () => {
+  it( 'snapshor', () => {
+    expect( App ).toMatchSnapshot()
+  } )
+} )
