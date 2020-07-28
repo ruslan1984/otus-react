@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Cell from './Cell';
 import { withKnobs, boolean ,text } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
