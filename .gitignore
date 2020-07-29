@@ -28,5 +28,3 @@ yarn-error.log*
 
 storybook-static
 __snapshots__
-
-yarn.lock
