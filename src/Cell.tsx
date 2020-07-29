@@ -1,5 +1,5 @@
 import React, { FC }  from 'react';
-import './App.css';
+
 
 interface ICellProps {
     move?: boolean;
@@ -11,11 +11,14 @@ interface ICellState {
     disabled: boolean;
     value: "x"|"0"|"";
 }
-
+const style = {
+    width: '50px',
+    height: '50px'
+  };
 
 const Presenter: FC<ICellProps> = ( { value, onClick, disabled } ) =>
     {
-        return <button className="button" disabled={ disabled } onClick={ onClick }>{ value }</button>;
+        return <button style={style} className="button" disabled={ disabled } onClick={ onClick }>{ value }</button>;
     }
 
 export default class Cell extends React.Component<ICellProps, ICellState> {
@@ -25,8 +28,9 @@ export default class Cell extends React.Component<ICellProps, ICellState> {
             value: "",
             disabled: false
         };
+        this.myClick = this.myClick.bind(this);
     }
-    myClick = () => {
+    myClick() {
         const value = ( this.props.move ) ? 'x' : '0';
         this.setState( state => ( {
             value: value,
