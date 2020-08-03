@@ -1,28 +1,27 @@
 import React, { FC }  from 'react';
 
 
-interface ICellProps {
+interface CellProps {
     move?: boolean;
     onClick?: any;
     value?: string;
     disabled?: boolean;
 }
-interface ICellState {
+interface CellState {
     disabled: boolean;
     value: "x"|"0"|"";
 }
 const style = {
     width: '50px',
     height: '50px'
-  };
+};
 
-const Presenter: FC<ICellProps> = ( { value, onClick, disabled } ) =>
-    {
-        return <button style={style} className="button" disabled={ disabled } onClick={ onClick }>{ value }</button>;
-    }
+const Presenter: FC<CellProps> = ( { value, onClick, disabled } ) =>
+    <button style={style} className="button" disabled={ disabled } onClick={ onClick }>{ value }</button>;
 
-export default class Cell extends React.Component<ICellProps, ICellState> {
-    constructor ( props: ICellProps ) {
+
+export default class Cell extends React.Component<CellProps, CellState> {
+    constructor ( props: CellProps ) {
         super( props );
         this.state = {
             value: "",
@@ -37,14 +36,14 @@ export default class Cell extends React.Component<ICellProps, ICellState> {
         } ) );
         this.props.onClick();
     }
-    shouldComponentUpdate(nextProps:ICellProps, nextState:ICellState){
+    shouldComponentUpdate(nextProps:CellProps, nextState:CellState){
         if (this.state.value){
             return this.state.disabled = true;
         }
         return this.state
     } 
     render () {
-        return ( //<button className="button" disabled={ this.state.disabled } onClick={ this.myClick }>{ this.state.value }</button>
+        return ( 
             <Presenter    
                 value={ this.state.value }
                 onClick={ this.myClick }

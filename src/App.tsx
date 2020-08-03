@@ -5,10 +5,10 @@ import Unmount from "./Unmount";
 import Error from "./Error";
 
 
-interface IAppProps {
+interface AppProps {
     move?: boolean;
 }
-interface IAppState {
+interface AppState {
     move: boolean;
     message: string;
     moveMessage: string;
@@ -18,8 +18,8 @@ interface IAppState {
 const style = {
     display: "flex"
 };
-export default class App extends React.Component<IAppProps, IAppState> {
-    constructor ( props: IAppProps ) {
+export default class App extends React.Component<AppProps, AppState> {
+    constructor ( props: AppProps ) {
         super( props );
         this.state = {
             move: true,
@@ -32,13 +32,14 @@ export default class App extends React.Component<IAppProps, IAppState> {
         this.unmountClick = this.unmountClick.bind( this );
         this.errorClick = this.errorClick.bind( this );
     }
-    componentDidMount () {
+    async componentDidMount () {
         fetch( 'https://jsonplaceholder.typicode.com/todos/1' )
             .then( response => response.json() )
-            .then( json => console.log( json ) )
-        this.setState( { message: 'Компонет смонтирован' } );
+            .then( json => {
+                this.setState( { message: JSON.stringify(json) } );
+            } );
     }
-    componentDidUpdate ( prevProps: IAppProps, prevState: IAppState ) {
+    componentDidUpdate ( prevProps: AppProps, prevState: AppState ) {
         if ( this.state.move !== prevState.move ) {
             const m = ( this.state.move ) ? "X" : "0";
             this.setState( { moveMessage: m } );
@@ -63,22 +64,13 @@ export default class App extends React.Component<IAppProps, IAppState> {
         const listItems = numbers.map( ( number ) =>
             <div key={ number } style={ style }>
                 { numbers.map( ( number1 ) =>
-                    <Cell key={ number1 } move={ this.state.move } onClick={ this.cellClick } />
+                    <Cell key={ (number+'_'+number1).toString() } move={ this.state.move } onClick={ this.cellClick } />
                 ) }
             </div>
         );
         let unmount, error;
-        if ( this.state.show ) {
-            unmount = <Unmount />;
-        } else {
-            unmount = '';
-        }
-        if ( this.state.error ) {
-            error = <Error />;
-        } else {
-            error = '';
-        }
-
+        unmount = this.state.show?<Unmount />:"";
+        error =  this.state.error ? <Error />:"";
         return (
             <>
                 { listItems }

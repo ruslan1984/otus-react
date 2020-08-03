@@ -7,7 +7,6 @@ import { action } from "@storybook/addon-actions";
 export default {
   component: App,
   title: 'App',
-  // Our exports that end in "Data" are not stories.
   excludeStories: /.*Data$/,
   decorators: [withKnobs]
 };
@@ -21,9 +20,5 @@ export const taskData = {
 
 const count = number("Number", 0);
 
-// export const actionsData = {
-//   onPinTask: action('onPinTask'),
-//   onArchiveTask: action('onArchiveTask'),
-// };
 
 export const Default = () => <App />;
