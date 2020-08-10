@@ -13,7 +13,7 @@ let inputProps = {
     "max": 200
 }
 // Proxy component
-const InputNumber = (props:any) => <Input required type='number'{...inputProps}  {...props} />
+const InputNumber = ( props: any ) => <Input required type='number'{ ...inputProps }  { ...props } />
 
 interface AppProps {
     move?: boolean;
@@ -37,12 +37,12 @@ const AppF: FC<AppProps> = ( props: AppProps ) => {
 
 
     useEffect( () => {
-        setMessage('Компонент смонтирован');
-    },[]);
+        setMessage( 'Компонент смонтирован' );
+    }, [] );
     useEffect( () => {
         const m = ( move ) ? "X" : "0";
         setMoveMessage( m );
-    },[move]);
+    }, [ move ] );
     const cellClick = () => {
         setMove( !move );
         setStatus( 'resume' );
@@ -74,7 +74,7 @@ const AppF: FC<AppProps> = ( props: AppProps ) => {
     const changeHeight = ( ev: React.ChangeEvent ) => {
         cellH = Number( ( ev.target as HTMLInputElement ).value );
     }
-    const change=(ev: React.ChangeEvent)=>{
+    const change = ( ev: React.ChangeEvent ) => {
         cellW = Number( ( ev.target as HTMLInputElement ).value );
     }
     const submit = ( e: React.FormEvent ) => {
@@ -118,11 +118,11 @@ const AppF: FC<AppProps> = ( props: AppProps ) => {
             <form action="" onSubmit={ submit }>
                 <label className={ css.label } htmlFor="">
                     <span className={ css.labelWidth }>Ширина ячейки</span>
-                    <InputNumber name="cellW" onChange={ changeWidth }/>
+                    <InputNumber name="cellW" onChange={ changeWidth } />
                 </label>
                 <label className={ css.label } htmlFor="">
                     <span className={ css.labelWidth }>Высота ячейки</span>
-                    <InputNumber name="cellH" onChange={ changeHeight }/>
+                    <InputNumber name="cellH" onChange={ changeHeight } />
                 </label>
                 <Button>Сохранить</Button>
             </form>
