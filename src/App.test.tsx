@@ -9,7 +9,7 @@ describe( "App", () => {
     expect( app.find( 'Cell' ).length ).toBe( 9 );
   } );
 
- 
+
 
 
   describe( "Play", () => {
@@ -28,10 +28,10 @@ describe( "App", () => {
       const newBtn = appMount.find( '#new' );
       const btn = newBtn.find( 'button' );
       btn.simulate( 'click' );
-      let val='x';
+      let val = 'x';
       call.forEach( ( item1 ) => {
         const cellBtn = item1.find( 'button' );
-        expect( cellBtn.text() ).toEqual('');
+        expect( cellBtn.text() ).toEqual( '' );
         // val = ( val === 'x' ) ? '0' : 'x';
       } );
     } );
