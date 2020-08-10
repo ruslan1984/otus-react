@@ -8,7 +8,7 @@ export default {
   component: Cell,
   title: 'Cell',
   excludeStories: /.*Data$/,
-  // decorators: [withKnobs]
+
 };
 
 export const taskData = {

@@ -15,7 +15,7 @@
     "build-storybook": "build-storybook"
   },
   "husky": {
-    "hooks": {
+    "hooks1": {
       "pre-commit": "npm run check",
       "pre-push": "npm run check"
     }
