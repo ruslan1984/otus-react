@@ -1,5 +1,5 @@
 {
-  "name": "hw5",
+  "name": "hw6",
   "version": "1.0.0",
   "description": "",
   "main": "index.jsx",
@@ -10,7 +10,7 @@
     "loki:approve": "npx loki approve",
     "test": "npx jest",
     "test:loki": "npm run build-storybook && npx loki --requireReference --reactUri file:./storybook-static",
-    "check": "npm run lint && npm test && npm run test:loki",
+    "check": "npm test && npm run test:loki",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -103,6 +103,7 @@
     "jest-environment-jsdom-global": "^2.0.4",
     "jest-environment-node": "^26.2.0",
     "less-loader": "^6.2.0",
+    "lint": "^0.7.0",
     "node-sass": "^4.14.1",
     "postcss-loader": "^3.0.0",
     "react": "16",
