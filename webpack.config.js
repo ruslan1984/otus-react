@@ -2,6 +2,7 @@ const path = require( "path" );
 const webpackRules = require( "./webpackRules" );
 
 const HtmlWebpackPlugin = require( "html-webpack-plugin" );
+const PrettierPlugin = require("prettier-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -36,5 +37,9 @@ module.exports = {
     new HtmlWebpackPlugin( {
       template: "./src/index.html",
     } ),
+    new PrettierPlugin({
+      printWidth: 80,
+      tabWidth: 4
+  })
   ],
 };

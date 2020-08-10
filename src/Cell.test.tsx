@@ -27,7 +27,7 @@ describe( "Has Button", () => {
 
 
 describe( "snapshot Cell", () => {
-  it( 'snapshor', () => {
+  it( 'snapshot', () => {
     expect( Cell ).toMatchSnapshot()
   } )
 } );

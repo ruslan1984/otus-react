@@ -1,5 +1,5 @@
 {
-  "name": "hw5",
+  "name": "hw6",
   "version": "1.0.0",
   "description": "",
   "main": "index.jsx",
@@ -10,12 +10,12 @@
     "loki:approve": "npx loki approve",
     "test": "npx jest",
     "test:loki": "npm run build-storybook && npx loki --requireReference --reactUri file:./storybook-static",
-    "check": "npm run lint && npm test && npm run test:loki",
+    "check": "npm test && npm run test:loki",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "husky": {
-    "hooks": {
+    "hooks1": {
       "pre-commit": "npm run check",
       "pre-push": "npm run check"
     }
@@ -79,6 +79,7 @@
     "jest": "^25.2.4",
     "loki": "^0.24.0",
     "prettier": "^2.0.2",
+    "prettier-webpack-plugin": "^1.2.0",
     "react-docgen-typescript-loader": "^3.7.2",
     "react-test-renderer": "^16.13.1",
     "storybook-addon-styles": "^1.1.0",

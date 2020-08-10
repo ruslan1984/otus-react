@@ -9,12 +9,12 @@ describe( "App", () => {
     expect( appMount.find( 'Cell' ).length ).toBe( 9 );
   } );
 
- 
+
 
 
   describe( "Play", () => {
     const cell = appMount.find( 'Cell' );
-    
+
     it( 'all Cell clicked', () => {
       let val: string = 'x';
       cell.forEach( ( item1 ) => {
@@ -32,7 +32,7 @@ describe( "App", () => {
       btn.simulate( 'click' );
       cell.forEach( ( item1 ) => {
         const cellBtn = item1.find( 'button' );
-        expect( cellBtn.text() ).toEqual('');
+        expect( cellBtn.text() ).toEqual( '' );
       } );
     } );
 
@@ -40,9 +40,9 @@ describe( "App", () => {
       const appMount1 = mount( <App /> );
       const cell1 = appMount1.find( 'Cell' );
       let val1: string = 'x';
-      const arrRand = randomArray(9);
-      arrRand.map( ( index,id ) => {
-        let curCall1 = cell1.at(index);
+      const arrRand = randomArray( 9 );
+      arrRand.map( ( index, id ) => {
+        let curCall1 = cell1.at( index );
         let cellBtn1 = curCall1.find( 'button' );
         cellBtn1.simulate( 'click' );
         expect( cellBtn1.text() ).toEqual( val1 );
@@ -66,15 +66,15 @@ describe( "snapshots App", () => {
   } )
 } );
 
-function randomArray(size:number){
-  size--; 
+function randomArray ( size: number ) {
+  size--;
   let arr = [], pool = [];
-  for(var i = 0; i <= size; i++) {
-      arr.push(i);
+  for ( var i = 0; i <= size; i++ ) {
+    arr.push( i );
   }
-  for(var i = 0; i <= size; i++) {
-    var value =  arr.splice(Math.floor(Math.random() * ((size-i) - 1) + 1),1);
-    pool.push(value.pop());
+  for ( var i = 0; i <= size; i++ ) {
+    var value = arr.splice( Math.floor( Math.random() * ( ( size - i ) - 1 ) + 1 ), 1 );
+    pool.push( value.pop() );
   }
   return pool;
 }
