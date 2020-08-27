@@ -1,0 +1,22 @@
+import React from 'react';
+import App from './App';
+import { withKnobs, text, boolean, number } from "@storybook/addon-knobs";
+
+export default {
+  component: App,
+  title: 'App',
+  excludeStories: /.*Data$/,
+  decorators: [ withKnobs ]
+};
+
+export const taskData = {
+  id: '1',
+  title: 'App',
+  state: 'App',
+  updatedAt: new Date( 2018, 0, 1, 9, 0 ),
+};
+
+const count = number( "Number", 0 );
+
+
+export const Default = () => <App />;
