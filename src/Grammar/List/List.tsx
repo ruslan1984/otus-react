@@ -1,10 +1,10 @@
 import React, { FC, useState, useEffect } from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import cn from "classnames";
-import css from "../style.css";
-import { grammarList } from "./data.tsx";
-import GrammarDetail from "./Detail";
-import { Ul, Page } from ".././elements";
+import css from "@/style.css";
+import { grammarList } from "@grammar/data.tsx";
+import GrammarDetail from "@grammar/Detail/Detail";
+import { Ul, Page } from "@/elements";
 
 interface ListProps {
     list: any;

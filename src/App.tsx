@@ -1,8 +1,7 @@
 import React, { FC } from "react";
 import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
-import "./types";
-import GrammarList from "./Grammar/List";
-import GrammarDetail from "./Grammar/Detail";
+import GrammarList from "./Grammar/List/List";
+import GrammarDetail from "./Grammar/Detail/Detail";
 import OrphographyList from "./Orphography/List";
 import LeftMenu from "./LeftMenu";
 import { MainPage } from "./elements";

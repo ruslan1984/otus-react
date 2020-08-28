@@ -1,8 +1,8 @@
 import React, { FC, useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import cn from "classnames";
-import { Input, Textarea, Name, Label, Button, Page } from ".././elements";
-import { grammarDetail } from "./data.tsx";
+import { Input, Textarea, Name, Label, Button, Page } from "@/elements";
+import { grammarDetail, updateDetail } from "@grammar/data.tsx";
 
 interface DetailProps {
     id: number;
