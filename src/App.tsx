@@ -1,33 +1,25 @@
 import React, { FC } from "react";
-import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
-import GrammarList from "./Grammar/List/List";
-import GrammarDetail from "./Grammar/Detail/Detail";
-import OrphographyList from "./Orphography/List";
-import LeftMenu from "./LeftMenu";
-import { MainPage } from "./elements";
+import {
+    Link,
+    BrowserRouter,
+    Route,
+    Switch,
+    useHistory,
+} from "react-router-dom";
+import AuthPage from "@auth/AuthPage";
+import AdminApp from "@admin/AdminApp";
 
 const App: FC = () => {
-    const history = useHistory();
+    // const history = useHistory();
     return (
-        <MainPage>
-            <BrowserRouter>
-                <LeftMenu />
-                <Switch>
-                    <Route exact path="/grammar" component={GrammarList} />
-                    <Route
-                        exact
-                        path="/grammar/:id"
-                        component={GrammarDetail}
-                    />
-
-                    <Route
-                        exact
-                        path="/orphography"
-                        component={OrphographyList}
-                    />
-                </Switch>
-            </BrowserRouter>
-        </MainPage>
+        <BrowserRouter>
+            <Switch>
+                <Route exact path="/" component={AuthPage} />
+                <Route exact path="/auth" component={AuthPage} />
+                <Route exact path="/admin" component={AdminApp} />
+                <Route path="*" render={() => 404} />
+            </Switch>
+        </BrowserRouter>
     );
 };
 

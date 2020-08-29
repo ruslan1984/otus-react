@@ -1,4 +1,4 @@
-import { Input, Textarea, Name, Label, Button, Page } from "@/elements";
+import { Input, Textarea, Name, Label, Button, Page } from "@admin/elements";
 import React, { FC } from "react";
 import cn from "classnames";
 
@@ -8,8 +8,8 @@ interface DetailProps {
     submitUploading: boolean;
     name: string;
     text: string;
-    change: any;
-    submit: any;
+    change: React.FormEventHandler;
+    submit: React.FormEventHandler;
 }
 
 const Presenter: FC<DetailProps> = (props: DetailProps) => {

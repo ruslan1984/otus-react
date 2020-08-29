@@ -3,16 +3,6 @@ import { useParams } from "react-router-dom";
 import { grammarDetail, updateDetail } from "@grammar/data.tsx";
 import Presenter from "./Presenter";
 
-interface DetailProps {
-    id: number;
-    pageUploading: boolean;
-    submitUploading: boolean;
-    name: string;
-    text: string;
-    change: any;
-    submit: any;
-}
-
 const Detail: FC = () => {
     const [name, setName] = useState("");
     const [text, setText] = useState("");
@@ -58,10 +48,10 @@ const Detail: FC = () => {
         };
         setSubmitUploading(true);
         updateDetail(id, data).then(
-            (result) => {
+            (result: any) => {
                 result && setSubmitUploading(false);
             },
-            (error) => {
+            (error: any) => {
                 console.error("Rejected: " + error);
             }
         );

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Page } from ".././elements";
+import { Page } from "@admin/elements";
 
 const List: FC = () => {
     return (

@@ -51,9 +51,8 @@ export function updateDetail(id: number, update_data: any) {
                 name: update_data.name,
                 text: update_data.text,
             };
-        } else {
-            return item;
         }
+        return item;
     });
     return new Promise((resolve, reject) => {
         setTimeout(() => {

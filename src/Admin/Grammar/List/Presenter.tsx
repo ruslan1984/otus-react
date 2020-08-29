@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import GrammarDetail from "@grammar/Detail/Detail";
-import { Ul, Page } from "@/elements";
+import { Ul, Page } from "@admin/elements";
 import cn from "classnames";
-import css from "@/style.css";
+import css from "@admin/style.css";
 
 interface ListProps {
     list: any;
@@ -16,14 +16,21 @@ const Presenter: FC<ListProps> = (props: ListProps) => {
             <Ul>
                 {props.list.map((item) => (
                     <li key={item.id.toString()}>
-                        <Link className={css.link} to={`/grammar/${item.id}`}>
+                        <Link
+                            className={css.link}
+                            to={`/admin/grammar/${item.id}`}
+                        >
                             {item.name}
                         </Link>
                     </li>
                 ))}
             </Ul>
             <Switch>
-                <Route exact path="/grammar/:id" component={GrammarDetail} />
+                <Route
+                    exact
+                    path="/admin/grammar/:id"
+                    component={GrammarDetail}
+                />
             </Switch>
         </Page>
     );
