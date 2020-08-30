@@ -10,6 +10,13 @@ module.exports = {
   mode: "development",
   resolve: {
     extensions: [ ".js", ".jsx", ".ts", ".tsx", ".json" ],
+    alias: {
+      // types: path.resolve(__dirname, "src/types"),
+      "@admin": path.resolve(__dirname, 'src/Admin'),
+      "@auth": path.resolve(__dirname, 'src/Auth'),
+      "@grammar": path.resolve(__dirname, 'src/Admin/Grammar'),
+      "@orph": path.resolve(__dirname, 'src/Admin/Orphography')
+    }
   },
   output: {
     path: path.join( __dirname, "/dist" ),

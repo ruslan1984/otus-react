@@ -63,7 +63,7 @@ module.exports = {
     return {
           ...config,
           resolve: {
-            extensions: custom.resolve.extensions,
+            extensions: custom.resolve.extensions
           },
           module: { 
             ...config.module, 

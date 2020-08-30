@@ -1,5 +1,5 @@
 import React from 'react';
-import App from './App';
+import App from './Admin/AdminApp';
 import { withKnobs, text, boolean, number } from "@storybook/addon-knobs";
 
 export default {

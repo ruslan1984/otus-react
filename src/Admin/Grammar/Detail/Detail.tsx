@@ -1,52 +1,7 @@
 import React, { FC, useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
-import cn from "classnames";
-import { Input, Textarea, Name, Label, Button, Page } from ".././elements";
-import { grammarDetail } from "./data.tsx";
-
-interface DetailProps {
-    id: number;
-    pageUploading: boolean;
-    submitUploading: boolean;
-    name: string;
-    text: string;
-    change: any;
-    submit: any;
-}
-
-const Presenter: FC<DetailProps> = (props: DetailProps) => {
-    return (
-        <Page className={cn({ uploading: props.pageUploading })}>
-            ID {props.id}
-            <hr />
-            <form action="" onSubmit={props.submit}>
-                <Label htmlFor="">
-                    <Name>Название</Name>
-                    <Input
-                        onChange={props.change}
-                        name="name"
-                        type="text"
-                        value={props.name}
-                    />
-                </Label>
-                <Label htmlFor="">
-                    <Name>Текст</Name>
-                    <Textarea
-                        defaultValue={props.text}
-                        onChange={props.change}
-                        name="text"
-                        id="text"
-                        cols="30"
-                        rows="10"
-                    />
-                </Label>
-                <Button className={cn({ updating: props.submitUploading })}>
-                    Сохранить
-                </Button>
-            </form>
-        </Page>
-    );
-};
+import { grammarDetail, updateDetail } from "@grammar/data.tsx";
+import Presenter from "./Presenter";
 
 const Detail: FC = () => {
     const [name, setName] = useState("");
@@ -93,10 +48,10 @@ const Detail: FC = () => {
         };
         setSubmitUploading(true);
         updateDetail(id, data).then(
-            (result) => {
+            (result: any) => {
                 result && setSubmitUploading(false);
             },
-            (error) => {
+            (error: any) => {
                 console.error("Rejected: " + error);
             }
         );
