@@ -3,8 +3,8 @@ export const originalTeamToExpectedTeam21 = (originalTeam: any) => {
     obj.name = "New York Badgers";
     obj.league = "Minor";
     obj.roster = 25;
-    delete obj.size;
-    return obj;
+    const removeSize = ({ size, ...obj }) => obj;
+    return removeSize(obj);
 };
 
 export const originalArrayToExpectedArray2 = (originalArray: any) => {
