@@ -17,7 +17,8 @@ const teams = [
     { name: "Bears", score: 6 },
     { name: "Monkeys", score: 2 },
 ];
-const result11 = getTopName(teams);
+type team = { score: number; name: string };
+const result11 = getTopName<team>(teams);
 console.dir(result11);
 // 1.2
 console.dir("1.2");
