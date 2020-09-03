@@ -1,15 +1,19 @@
-export const getTopName = (data: any): any => {
-    data.sort((a: any, b: any) => {
-        if (a.score < b.score) {
-            return 1;
+type sortType = 0 | -1 | 1;
+
+export function getTopName<T = any>(data: T[]): string {
+    data.sort(
+        (a: T, b: T): sortType => {
+            if (a.score < b.score) {
+                return 1;
+            }
+            if (a.score > b.score) {
+                return -1;
+            }
+            return 0;
         }
-        if (a.score > b.score) {
-            return -1;
-        }
-        return 0;
-    });
+    );
     return data[0].name;
-};
+}
 
 export const createQs = (data: any) => {
     let res = Object.keys(data).reduce((a: any, b: any, ind: number, d) => {
