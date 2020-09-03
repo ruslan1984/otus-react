@@ -8,7 +8,7 @@ export const getTopName = (data: any): any => {
         }
         return 0;
     });
-    return data[0];
+    return data[0].name;
 };
 
 export const createQs = (data: any) => {
