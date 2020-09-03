@@ -8,8 +8,7 @@ export const originalTeamToExpectedTeam21 = (originalTeam: any) => {
 };
 
 export const originalArrayToExpectedArray2 = (originalArray: any) => {
-    const arr = [...originalArray];
-    arr.splice(0, 2);
+    const arr = originalArray.slice(2);
     return ["two", ...arr, 5];
 };
 
