@@ -1,18 +1,10 @@
 import React, { FC } from "react";
 import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
-import { connect } from "react-redux";
 import LeftMenu from "@admin/LeftMenu/LeftMenu";
 import { MainPage } from "@admin/elements";
 import Header from "@admin/Header/Header";
-import { Redirect } from "react-router-dom";
 
-interface AdminAppProps {
-    authorized: boolean;
-}
-const AdminApp: FC<AdminAppProps> = (props: AdminAppProps) => {
-    if (!props.authorized) {
-        return <Redirect to="/" />;
-    }
+const AdminApp: FC = () => {
     return (
         <>
             <Header />
@@ -34,9 +26,4 @@ const AdminApp: FC<AdminAppProps> = (props: AdminAppProps) => {
     );
 };
 
-const mapStateToProps = (state: any) => {
-    return {
-        authorized: state.auth.authorized,
-    };
-};
-export default connect(mapStateToProps)(AdminApp);
+export default AdminApp;
