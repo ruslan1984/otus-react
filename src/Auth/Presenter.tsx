@@ -1,6 +1,5 @@
 import { Input, Name, Label, Button, Page } from "@admin/elements";
 import React, { FC } from "react";
-import cn from "classnames";
 
 interface AuthProps {
     submit: React.FormEventHandler;
@@ -35,9 +34,7 @@ const Presenter: FC<AuthProps> = (props: AuthProps) => {
                         value={props.password}
                     />
                 </Label>
-                <Button className={cn({ updating: props.loading })}>
-                    Вход
-                </Button>
+                <Button loading={props.loading.toString()}>Вход</Button>
             </form>
         </Page>
     );

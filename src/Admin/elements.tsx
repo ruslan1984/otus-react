@@ -27,15 +27,15 @@ export const Button = styled.button`
     text-transform: uppercase;
     font-weight: 900;
     margin: 5px;
+    transition: 0s;
     &:hover {
-        transition: 0.5s;
         background: #1be61b;
     }
-    &.updating {
-        transition: 0s;
-        background: #eeeeee;
-        color: #dddddd;
-    }
+    ${(props: { loading: string }) => {
+        if (props.loading == "true") {
+            return "background: #eeeeee !important; color: #dddddd !important; ";
+        }
+    }};
 `;
 
 export const Name = styled.span`
@@ -81,4 +81,7 @@ export const MainPage = styled.div`
 export const ListLink = styled(Link)`
     color: black;
     text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
 `;
