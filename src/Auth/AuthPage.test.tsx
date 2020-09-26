@@ -21,9 +21,6 @@ function* rootSaga() {
     yield fork(loginSaga);
 }
 
-// if (process.env.NODE_ENV === `development`) {
-//     middleware.push(loginMiddleware);
-// }
 export const store = configureStore({
     reducer,
     middleware: [sagaMiddleware],

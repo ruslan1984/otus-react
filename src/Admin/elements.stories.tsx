@@ -2,7 +2,6 @@ import React from 'react';
 import StoryRouter from 'storybook-react-router';
 import { storiesOf } from '@storybook/react';
 import {Input,  Textarea,  Button, Name,  Label} from './elements';
-// import { withKnobs } from "@storybook/addon-knobs";
 
 export default {
   component: Input,

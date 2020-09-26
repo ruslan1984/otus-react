@@ -14,7 +14,6 @@ const AdminApp: FC<AdminAppProps> = (props: AdminAppProps) => {
     if (props.status === CheckState.initiated) {
         return <Redirect to="/" />;
     }
-    // if (props.status === CheckState.succeed)
     return (
         <>
             <Header />
