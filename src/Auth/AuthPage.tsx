@@ -1,9 +1,11 @@
 import React, { FC, useState, useEffect, useCallback } from "react";
-import Presenter from "./Presenter";
+
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { authActions } from "@store/reducers/auth/auth";
+import Presenter from "./Presenter";
+import reduceType from "@store/reducers";
 
 interface AuthProps {
     user: string;
@@ -37,12 +39,13 @@ const AuthPage: FC<AuthProps> = (props: AuthProps) => {
         />
     );
 };
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: reduceType) => {
+    const { user, password, authorized, loading } = state.auth;
     return {
-        user: state.auth.user,
-        password: state.auth.password,
-        authorized: state.auth.authorized,
-        loading: state.auth.loading,
+        user,
+        password,
+        authorized,
+        loading,
     };
 };
 const mapDispatchToProps = (dispatch) => {
