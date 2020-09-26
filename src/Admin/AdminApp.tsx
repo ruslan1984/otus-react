@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import LeftMenu from "@admin/LeftMenu/LeftMenu";
 import { MainPage } from "@admin/elements";
 import Header from "@admin/Header/Header";

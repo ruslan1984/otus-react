@@ -2,7 +2,6 @@ import React, { FC, useState } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { authActions } from "@store/reducers/auth/auth";
-import { Redirect } from "react-router-dom";
 interface HeaderProps {
     authorized: boolean;
     logout: any;

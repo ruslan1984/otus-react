@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import { Ul, Menu, ListLink } from "@admin/elements";
-import { Link } from "react-router-dom";
 import css from "@admin/style.css";
 
 const LeftMenu: FC = () => {
