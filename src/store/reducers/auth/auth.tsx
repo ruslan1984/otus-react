@@ -12,19 +12,19 @@ const authSlice = createSlice({
     name: "auth",
     initialState: defaultState,
     reducers: {
-        logout: (state, action: PayloadAction<any>) => {
+        logout: (state, action: PayloadAction<boolean>) => {
             return { ...state, authorized: action.payload };
         },
-        login: (state, action: PayloadAction<any>) => {
+        login: (state, action: PayloadAction<boolean>) => {
             return { ...state, authorized: action.payload };
         },
-        loading: (state, action: PayloadAction<any>) => {
+        loading: (state, action: PayloadAction<boolean>) => {
             return { ...state, loading: action.payload };
         },
-        setUser: (state, action: PayloadAction<any>) => {
+        setUser: (state, action: PayloadAction<string>) => {
             return { ...state, user: action.payload };
         },
-        setPassword: (state, action: PayloadAction<any>) => {
+        setPassword: (state, action: PayloadAction<string>) => {
             return { ...state, password: action.payload };
         },
     },
