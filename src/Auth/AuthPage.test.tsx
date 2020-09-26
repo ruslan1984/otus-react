@@ -12,14 +12,18 @@ import {data} from '@auth/data';
 
 const middleware = [thunkMiddleware];
 middleware.push(loginMiddleware);
-export const store = configureStore({
+export const store1 = configureStore({
     reducer,
     middleware,
 });
 
 
 describe("Auth", () => {
-  
+    let store = store1;
+    beforeEach(() => {
+        store = store1;
+        jest.clearAllMocks();
+      });
     const wrapper = mount(
         <Provider store={store}>
               <BrowserRouter>
@@ -27,6 +31,7 @@ describe("Auth", () => {
               </BrowserRouter>
         </Provider>
       );
+      
       const name = wrapper.find("input[name='name']");
       const password = wrapper.find("input[name='password']");
       const button = wrapper.find("button");
