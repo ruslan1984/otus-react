@@ -26,7 +26,7 @@ const AuthPage: FC<AuthProps> = (props: AuthProps) => {
         <Presenter
             user={props.user}
             password={props.password}
-            loading={false}
+            loading={props.loading}
             changeUser={(ev: React.FormEvent) =>
                 props.setUser((ev.target as HTMLInputElement).value)
             }
