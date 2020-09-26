@@ -15,14 +15,10 @@ const Header: FC<HeaderProps> = (props: HeaderProps) => {
         </>
     );
 };
-
-const mapStateToProps = () => {
-    return {};
-};
 const mapDispatchToProps = (dispatch) => {
     return {
         logout: bindActionCreators(authActions.logout, dispatch),
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(undefined, mapDispatchToProps)(Header);
