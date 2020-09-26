@@ -8,11 +8,11 @@ import { authActions } from "@store/reducers/auth/auth";
 interface AuthProps {
     user: string;
     password: string;
-    login: any;
+    login: () => void;
     loading: boolean;
     authorized: boolean;
-    setUser: any;
-    setPassword: any;
+    setUser: (u: string) => void;
+    setPassword: (p: string) => void;
 }
 const AuthPage: FC<AuthProps> = (props: AuthProps) => {
     const submit = async (e: React.FormEvent) => {

@@ -4,7 +4,7 @@ import { bindActionCreators } from "redux";
 import { authActions } from "@store/reducers/auth/auth";
 interface HeaderProps {
     authorized: boolean;
-    logout: any;
+    logout: () => void;
 }
 
 const Header: FC<HeaderProps> = (props: HeaderProps) => {
