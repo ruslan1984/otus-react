@@ -1,5 +1,5 @@
-type auth={
-    user: string,
-    password: string,
-    authorized: boolean
-}
+type auth = {
+    user: string;
+    password: string;
+    authorized: boolean;
+};
