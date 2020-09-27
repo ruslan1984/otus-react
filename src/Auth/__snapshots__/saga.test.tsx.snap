@@ -15,4 +15,15 @@ Object {
 }
 `;
 
-exports[`Auth saga logout 1`] = `Promise {}`;
+exports[`Auth saga logout 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "args": Array [],
+    "context": null,
+    "fn": [Function],
+  },
+  "type": "CALL",
+}
+`;
