@@ -13,10 +13,12 @@
     "check": "npm lint && npm test && npm run test:loki",
     "check-lint": "npm lint",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "lint": "npx eslint --ext .js,.jsx,.ts,.tsx --fix ./",
+    "prettier": "prettier --write src/**/*.tsx src/**/*.js"
   },
-  "husky": {
-    "hooks1": {
+  "husky1": {
+    "hooks": {
       "pre-commit": "npm run check-lint",
       "pre-push": "npm run check"
     }
@@ -73,7 +75,6 @@
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-loader": "^4.0.2",
-    "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jest": "^23.20.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prettier": "^3.1.4",
@@ -109,7 +110,9 @@
     "@types/redux-logger": "^3.0.8",
     "css-modules-typescript-loader": "^4.0.0",
     "eslint-config-ts-react": "^0.2.18",
+    "eslint-plugin-html": "^6.1.0",
     "eslint-plugin-prefer-arrow": "^1.2.2",
+    "eslint-plugin-react-hooks": "^4.1.2",
     "jest-emotion": "^10.0.32",
     "jest-environment-jsdom-global": "^2.0.4",
     "jest-environment-node": "^26.2.0",

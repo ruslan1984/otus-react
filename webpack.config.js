@@ -19,7 +19,7 @@ module.exports = {
       "@store": path.resolve(__dirname, 'src/store'),
       types: path.resolve(__dirname, "src/types"),
       components: path.resolve(__dirname, "src"),
-    }
+    },
   },
   output: {
     path: path.join( __dirname, "/dist" ),
@@ -31,17 +31,23 @@ module.exports = {
         test: /.css$/i,
         use: [
           { loader: "style-loader" },
-          { loader: "css-loader",
+          {
+            loader: "css-loader",
             options: {
-              modules: true }
+              modules: true,
+            },
           },
-      ]
+        ],
       },
-      // {
-      //   test: /\.(js|ts)x?$/,
-      //   exclude: /node_modules/,
-      //   use: ['eslint-loader']
-      // },
+      {
+        enforce: 'pre',
+        test: /\.(js|ts)x?$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: {
+          fix: true,
+        },
+      },
       ...webpackRules,
     ],
   },
@@ -49,12 +55,12 @@ module.exports = {
     historyApiFallback: true,
   },
   plugins: [
-    new HtmlWebpackPlugin( {
+    new HtmlWebpackPlugin({
       template: "./src/index.html",
-    } ),
+    }),
     new PrettierPlugin({
       printWidth: 80,
-      tabWidth: 4
-  })
+      tabWidth: 2,
+    }),
   ],
 };
