@@ -1,11 +1,11 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actions } from "@store/reducers/auth/auth";
 
 interface HeaderProps {
   authorized: boolean;
-  logout: any;
+  logout: () => void;
 }
 
 const Header: FC<HeaderProps> = (props: HeaderProps) => (

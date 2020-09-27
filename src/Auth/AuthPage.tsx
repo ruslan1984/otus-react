@@ -1,15 +1,21 @@
-import React, { FC, useState, useEffect, useCallback } from "react";
+import React, { FC, useState } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actions } from "@store/reducers/auth/auth";
 import { CheckState } from "@auth/types";
 import Presenter from "./Presenter";
+import reducerType from "@store/reducers";
+
+type loginType = {
+  user: string;
+  password: string;
+};
 
 interface AuthProps {
   user: string;
   password: string;
-  login: any;
+  login: (object: loginType) => void;
   loading: boolean;
   status: CheckState;
   setUser: (e: string) => void;
@@ -41,7 +47,7 @@ const AuthPage: FC<AuthProps> = (props: AuthProps) => {
     />
   );
 };
-const mapStateToProps = (state: any) => ({
+const mapStateToProps = (state: reducerType) => ({
   status: state.auth.status,
   loading: state.auth.loading,
 });

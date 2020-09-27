@@ -15,19 +15,14 @@
     }
   },
   "rules": {
+    "import/prefer-default-export": "off",
     "prettier/prettier": [
       "error",
       {
         "endOfLine": "auto"
       }
     ],
-    "no-restricted-syntax": [
-      "error",
-      {
-        "selector": "ExportDefaultDeclaration",
-        "message": "Restricted default export, prefer named exports!"
-      }
-    ],
+    
     "no-console": [
       "error",
       { "allow": [
@@ -50,8 +45,7 @@
     {
       "files": ["webpack.config.js"],
       "rules": {
-        "@typescript-eslint/no-var-requires": ["off"],
-        "import/prefer-default-export": "off"
+        "@typescript-eslint/no-var-requires": ["off"]
       }
     }
   ]

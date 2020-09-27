@@ -39,15 +39,15 @@ module.exports = {
           },
         ],
       },
-      // {
-      //   enforce: 'pre',
-      //   test: /\.(js|ts)x?$/,
-      //   exclude: /node_modules/,
-      //   loader: 'eslint-loader',
-      //   options: {
-      //     fix: true,
-      //   },
-      // },
+      {
+        enforce: 'pre',
+        test: /\.(js|ts)x?$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: {
+          fix: true,
+        },
+      },
       ...webpackRules,
     ],
   },
@@ -61,6 +61,6 @@ module.exports = {
     new PrettierPlugin({
       printWidth: 80,
       tabWidth: 2,
-  })
+    }),
   ],
 };
