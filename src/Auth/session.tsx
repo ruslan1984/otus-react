@@ -2,14 +2,14 @@ import { sleep } from "@/functions";
 import { data } from "@auth/data";
 
 export const login = async (user: string) => {
-    await sleep(200);
-    localStorage.setItem("auth", user);
+  await sleep(200);
+  localStorage.setItem("auth", user);
 };
 export const logout = async () => {
-    await sleep(200);
-    localStorage.removeItem("auth");
+  await sleep(200);
+  localStorage.removeItem("auth");
 };
 export const isAuthorised = async () => {
-    await sleep(200);
-    return localStorage.getItem("auth") === data.user;
+  await sleep(200);
+  return localStorage.getItem("auth") === data.user;
 };

@@ -2,27 +2,22 @@ import React, { FC, useState } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actions } from "@store/reducers/auth/auth";
+
 interface HeaderProps {
-    authorized: boolean;
-    logout: any;
+  authorized: boolean;
+  logout: any;
 }
 
-const Header: FC<HeaderProps> = (props: HeaderProps) => {
-    return (
-        <>
-            <button onClick={props.logout}> Выйти</button>
-            <hr />
-        </>
-    );
-};
+const Header: FC<HeaderProps> = (props: HeaderProps) => (
+  <>
+    <button onClick={props.logout}> Выйти</button>
+    <hr />
+  </>
+);
 
-const mapStateToProps = () => {
-    return {};
-};
-const mapDispatchToProps = (dispatch) => {
-    return {
-        logout: bindActionCreators(actions.logout, dispatch),
-    };
-};
+const mapStateToProps = () => ({});
+const mapDispatchToProps = (dispatch) => ({
+  logout: bindActionCreators(actions.logout, dispatch),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

@@ -11,20 +11,20 @@ import { loginSaga } from "@store/reducers/auth/sagas";
 const sagaMiddleware = createSagaMiddleware();
 
 function* rootSaga() {
-    yield fork(loginSaga);
+  yield fork(loginSaga);
 }
 export const store = configureStore({
-    reducer,
-    middleware: [sagaMiddleware],
+  reducer,
+  middleware: [sagaMiddleware],
 });
 
 sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
-    <Provider store={store}>
-        <React.StrictMode>
-            <App />
-        </React.StrictMode>
-    </Provider>,
-    document.getElementById("root")
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>,
+  document.getElementById("root")
 );
