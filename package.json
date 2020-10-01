@@ -1,5 +1,5 @@
 {
-  "name": "hw10",
+  "name": "hw11",
   "version": "1.0.0",
   "description": "",
   "main": "index.jsx",
@@ -22,16 +22,6 @@
       "pre-push": "npm run check"
     }
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nickovchinnikov/react-js-tutorial.git"
-  },
-  "author": "Nick Ovchinnikov",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nickovchinnikov/react-js-tutorial/issues"
-  },
-  "homepage": "https://github.com/nickovchinnikov/react-js-tutorial#readme",
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
