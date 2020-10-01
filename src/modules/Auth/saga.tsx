@@ -10,8 +10,8 @@ import { login as dataLogin } from "./data";
 import { actions } from "./reducer";
 
 export function* checkUserSession() {
-  const auth: boolean = yield call(isAuthorised);
-  if (auth) {
+  const isAuth: boolean = yield call(isAuthorised);
+  if (isAuth) {
     yield put(actions.setState(CheckState.succeed));
   } else {
     yield put(actions.setState(CheckState.initiated));

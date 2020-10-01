@@ -3,7 +3,7 @@ import Presenter from "./AdminAppPresenter";
 import { Provider } from "react-redux";
 import reducer from "@store/reducers";
 import { fork } from "redux-saga/effects";
-import { loginSaga } from "@auth/sagas";
+import { loginSaga } from "@auth/saga";
 import createSagaMiddleware from "redux-saga";
 import { configureStore } from "@reduxjs/toolkit";
 

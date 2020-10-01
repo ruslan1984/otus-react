@@ -1,9 +1,5 @@
 import { call } from "redux-saga/effects";
-import {
-  checkUserSession,
-  auth,
-  logout,
-} from "./saga";
+import { checkUserSession, auth, logout } from "./saga";
 import { data, login as dataLogin } from "./data";
 import { isAuthorised } from "./session";
 import { CheckState } from "./types";

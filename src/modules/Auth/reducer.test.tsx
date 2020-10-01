@@ -5,7 +5,7 @@ describe("Login reducer", () => {
   it("login password ", () => {
     expect(reducer(defaultState, actions.auth({ user: 'root', password: 'root' }))).toEqual({
       user: "root",
-      password: "root", 
+      password: "root",
       status: CheckState.initiated,
     });
   });
