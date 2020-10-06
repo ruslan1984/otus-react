@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "paths": {
+      "types/*": ["src/types/*"],
+      "components/*": ["src/components/*"],
+      "@/*": ["src/*"],
+      "@admin/*": ["src/Admin"],
+      "@auth/*": ["src/Auth"],
+      "@grammar/*": ["src/Admin/Grammar"],
+      "@orph/*": ["src/Admin/Orphography"],
+      "@store/*": ["src/store"],
+    },
+    "module": "commonjs",
+    "allowJs": true,
+    "jsx": "react",
+    "sourceMap": true,
+    "strict": true,
+    "esModuleInterop": true,
+  }
+}
