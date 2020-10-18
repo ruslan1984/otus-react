@@ -30,3 +30,4 @@ storybook-static
 
 yarn.lock
 package-lock.json
+.next/

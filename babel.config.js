@@ -3,7 +3,8 @@ module.exports = {
     ["@babel/preset-env", { targets: { node: "current" } }],
     "@babel/preset-react",
     "@babel/preset-typescript",
-    "@emotion/babel-preset-css-prop"
+    "@emotion/babel-preset-css-prop",
+    "next/babel",
   ],
   plugins: ["@babel/plugin-proposal-class-properties"],
   env: {

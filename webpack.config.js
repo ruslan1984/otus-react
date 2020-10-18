@@ -20,7 +20,7 @@ module.exports = {
 
       "@components": path.resolve(__dirname, 'src/components'),
       "@modules": path.resolve(__dirname, 'src/modules'),
-
+      "@pages": path.resolve(__dirname, 'src/pages'),
       types: path.resolve(__dirname, "src/types"),
       components: path.resolve(__dirname, "src"),
     },
