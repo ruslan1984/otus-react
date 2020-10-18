@@ -14,7 +14,10 @@
     "check-lint": "npm lint",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "pr": "prettier --write src/**/*.tsx src/**/*.js"
+    "pr": "prettier --write src/**/*.tsx src/**/*.js",
+    "ndev": "next",
+    "nbuild": "next build",
+    "nstart": "next start"
   },
   "husky": {
     "hooks1": {
@@ -22,16 +25,6 @@
       "pre-push": "npm run check"
     }
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nickovchinnikov/react-js-tutorial.git"
-  },
-  "author": "Nick Ovchinnikov",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nickovchinnikov/react-js-tutorial/issues"
-  },
-  "homepage": "https://github.com/nickovchinnikov/react-js-tutorial#readme",
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
@@ -97,7 +90,9 @@
     "typescript": "^3.9.7",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "redux-devtools-extension": "^2.13.2",
+    "next": "latest"
   },
   "dependencies": {
     "@emotion/babel-preset-css-prop": "^10.0.27",
