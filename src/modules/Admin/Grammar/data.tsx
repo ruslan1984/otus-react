@@ -15,7 +15,7 @@ let data = [
 ];
 
 export async function grammarList() {
-  await sleep(1000);
+  await sleep(500);
   return data.map((item) => {
     return {
       id: item.id,

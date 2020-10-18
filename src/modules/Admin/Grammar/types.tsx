@@ -3,7 +3,7 @@ export type grammar = {
   name: string;
   text: string;
 };
-export type grammarList = {
+export type GrammarList = {
   id: number;
   name: string;
 };

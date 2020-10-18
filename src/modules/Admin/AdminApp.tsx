@@ -18,7 +18,7 @@ const mapStateToProps = (state: reducerType) => {
 export class AdminApp extends Component<AdminAppProps> {
   render() {
     if (this.props.status === CheckState.initiated) {
-      return <Redirect to="/" />;
+      return <Redirect to="/auth" />;
     }
     return (
       <ErrorBoundary>
