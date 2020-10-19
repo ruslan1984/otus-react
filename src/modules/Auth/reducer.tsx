@@ -24,6 +24,9 @@ export const authSlice = createSlice({
     failed: (state: Auth) => {
       return { ...state, status: CheckState.failed };
     },
+    zeroData: (state: Auth) => {
+      return { ...state, status: CheckState.zeroData };
+    },
   },
 });
 

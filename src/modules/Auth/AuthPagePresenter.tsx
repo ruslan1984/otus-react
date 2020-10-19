@@ -46,6 +46,9 @@ const AuthPagePresenter: FC<AuthProps> = (props: AuthProps) => {
           if (props.status === CheckState.failed) {
             return "Ошибка авторизации";
           }
+          if (props.status === CheckState.zeroData) {
+            return "Пустые данные";
+          }
         })()}
       </form>
     </Page>

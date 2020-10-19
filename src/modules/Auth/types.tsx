@@ -3,6 +3,7 @@ export enum CheckState {
   succeed,
   failed,
   loading,
+  zeroData,
 }
 export type Login = {
   user: string;
