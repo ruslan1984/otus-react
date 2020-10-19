@@ -1,15 +1,15 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction, createAction } from "@reduxjs/toolkit";
 import { GrammarListType, GrammarList, Loading } from "./types";
 
 export const defaultState: GrammarListType = {
   list: [],
   loading: Loading.ok,
 };
+export const setList = createAction("setList");
 export const grammarListSlice = createSlice({
   name: "grammarList",
   initialState: defaultState,
   reducers: {
-    setList: (state) => state,
     fetch: (state, { payload }: PayloadAction<GrammarList>) => {
       return { ...state, list: payload };
     },

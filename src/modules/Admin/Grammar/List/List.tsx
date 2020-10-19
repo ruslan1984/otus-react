@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Presenter from "./Presenter";
 import { connect } from "react-redux";
-import { actions } from "./reducer";
+import { setList } from "./reducer";
 import { GrammarList, Loading } from "./types";
 import { reducerType } from "@store/reducers";
 
@@ -20,7 +20,7 @@ const mapStateToProps = (state: reducerType) => {
 };
 
 const mapDispatchToProps = {
-  setList: actions.setList,
+  setList,
 };
 
 export class List extends Component<GrammarListProps> {
