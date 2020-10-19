@@ -9,7 +9,7 @@ import {
   logout as sessionLogout,
 } from "./session";
 import { checkUserSession, auth, logout } from "./saga";
-import { data, login as dataLogin } from "./data";
+import { data, login as serverLogin } from "./data";
 
 describe("redux saga test plan", () => {
   it("checkUserSession", () => {
@@ -17,9 +17,8 @@ describe("redux saga test plan", () => {
     return expectSaga(checkUserSession)
       .withReducer(reducer)
       .provide([[call(isAuthorised), isAuth]])
-      .put(actions.setStatus(CheckState.succeed))
+      .put(actions.login())
       .hasFinalState({
-        password: "",
         status: CheckState.succeed,
         user: "",
       })
@@ -29,17 +28,16 @@ describe("redux saga test plan", () => {
     const logined = true;
     return expectSaga(auth, {
       type: actions.auth.type,
-      payload: { user: "root", password: "root" },
+      payload: { user: "root",password: "root" },
     })
       .withReducer(reducer)
       .provide([[call(isAuthorised), auth]])
-      .put(actions.setStatus(CheckState.loading))
-      .provide([[call(dataLogin, "root", "root"), logined]])
+      .put(actions.loading())
+      .provide([[call(serverLogin, "root", "root"), true]])
       .call(sessionLogin, "root")
       .put(actions.login())
       .hasFinalState({
         user: "",
-        password: "",
         status: CheckState.succeed,
       })
       .run();
@@ -51,7 +49,6 @@ describe("redux saga test plan", () => {
       .put(actions.logout())
       .hasFinalState({
         user: "",
-        password: "",
         status: CheckState.initiated,
       })
       .run();

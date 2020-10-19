@@ -10,6 +10,5 @@ export type Login = {
 };
 export type Auth = {
   user: string;
-  password: string;
   status: CheckState;
 };

@@ -4,40 +4,35 @@ import { CheckState } from "./types";
 describe("Login reducer", () => {
   it("login password ", () => {
     expect(
-      reducer(defaultState, actions.auth({ user: "root", password: "root" }))
+      reducer(defaultState, actions.auth({ user: "root"}))
     ).toEqual({
       user: "root",
-      password: "root",
-      status: CheckState.initiated,
+      status: CheckState.succeed,
     });
   });
   it("login", () => {
     expect(reducer(defaultState, actions.login())).toEqual({
-      password: "",
       status: CheckState.succeed,
       user: "",
     });
   });
   it("logout", () => {
     expect(reducer(defaultState, actions.logout())).toEqual({
-      password: "",
       status: CheckState.initiated,
       user: "",
     });
   });
   it("loading", () => {
     expect(
-      reducer(defaultState, actions.setStatus(CheckState.loading))
+      reducer(defaultState, actions.loading())
     ).toEqual({
-      password: "",
       status: CheckState.loading,
       user: "",
     });
   });
   it("failed", () => {
-    expect(reducer(defaultState, actions.setStatus(CheckState.failed))).toEqual(
+    expect(reducer(defaultState, actions.failed())).toEqual(
       {
-        password: "",
         status: CheckState.failed,
         user: "",
       }

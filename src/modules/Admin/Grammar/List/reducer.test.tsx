@@ -1,13 +1,11 @@
-import { actions, reducer, defaultState } from "./reducer";
+import { actions, reducer, defaultState, setList } from "./reducer";
 // import { CheckState } from "./types";
 
 describe("Gramar list reducer", () => {
   it("setList", () => {
-    expect(
-      reducer(defaultState, actions.setList())
-    ).toEqual({
+    expect(reducer(defaultState, setList())).toEqual({
       "list": [],
-      "loading": false,
+      "loading": 1,
     });
   });
   it("setLoading true", () => {
@@ -20,10 +18,10 @@ describe("Gramar list reducer", () => {
   });
   it("setLoading false", () => {
     expect(
-      reducer(defaultState, actions.setLoading(true))
+      reducer(defaultState, actions.setLoading(false))
     ).toEqual({
       "list": [],
-      "loading": true,
+      "loading": false,
     });
   });
 });

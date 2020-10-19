@@ -5,8 +5,7 @@ import {
   logout as sessionLogout,
   isAuthorised,
 } from "./session";
-import { CheckState } from "./types";
-import { login as dataLogin } from "./data";
+import { login as serverLogin } from "./data";
 import { actions } from "./reducer";
 
 export function* checkUserSession() {
@@ -20,16 +19,16 @@ export function* checkUserSession() {
 
 export function* auth(data: ReturnType<typeof actions.auth>) {
   try {
-    yield put(actions.setStatus(CheckState.loading));
+    yield put(actions.loading());
     const { user, password } = data.payload;
     if (user.trim() === "" || password.trim() === "") {
-      return put(actions.setStatus(CheckState.failed));
+      return put(actions.failed());
     }
-    const logined: boolean = yield call(dataLogin, user, password);
+    const logined: boolean = yield call(serverLogin, user, password);
     if (logined) {
       yield all([call(sessionLogin, user), put(actions.login())]);
     } else {
-      yield put(actions.setStatus(CheckState.failed));
+      yield put(actions.failed());
     }
     return logined;
   } catch (error) {

@@ -3,24 +3,26 @@ import { Auth, Login, CheckState } from "./types";
 
 export const defaultState: Auth = {
   user: "",
-  password: "",
   status: CheckState.initiated,
 };
 export const authSlice = createSlice({
   name: "auth",
   initialState: defaultState,
   reducers: {
-    auth: (state, { payload }: PayloadAction<Login>) => {
-      return { ...state, user: payload.user, password: payload.password };
+    auth: (state: Auth, { payload }: PayloadAction<Login>) => {
+      return { ...state, user: payload.user, status: CheckState.succeed };
     },
-    login: (state) => {
+    login: (state: Auth) => {
       return { ...state, status: CheckState.succeed };
     },
-    logout: (state) => {
+    logout: (state: Auth) => {
       return { ...state, status: CheckState.initiated };
     },
-    setStatus: (state, action: PayloadAction<CheckState>) => {
-      return { ...state, status: action.payload };
+    loading: (state: Auth) => {
+      return { ...state, status: CheckState.loading };
+    },
+    failed: (state: Auth) => {
+      return { ...state, status: CheckState.failed };
     },
   },
 });
