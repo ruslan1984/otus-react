@@ -1,7 +1,9 @@
-import { GrammarList } from "./types";
+import * as R from "ramda";
+
+import { grammar } from "./types";
 import { sleep } from "@/functions";
 
-let data = [
+const data: Array<grammar> = [
   {
     id: 1,
     name: "Страница 1",
@@ -15,46 +17,20 @@ let data = [
 ];
 
 export async function grammarList() {
-  await sleep(500);
-  return data.map((item) => {
-    return {
-      id: item.id,
-      name: item.name,
-    };
-  });
+  await sleep(1000);
+  return R.project(["id", "name"], data);
 }
 
-export const grammarDetail = (id: number) => {
-  let result: GrammarList;
-  data.forEach((item) => {
-    if (id == item.id) {
-      result = {
-        name: item.name,
-        text: item.text,
-      };
-    }
-  });
-
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(result);
-    }, 200);
-  });
+export const grammarDetail = async (id: number) => {
+  await sleep(1000);
+  return data.find((item) => item.id == id);
 };
-export function updateDetail(id: number, updateData: GrammarList) {
-  data = data.map((item) => {
-    if (id == item.id) {
-      return {
-        id: item.id,
-        name: updateData.name,
-        text: updateData.text,
-      };
-    }
-    return item;
-  });
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(true);
-    }, 200);
-  });
+
+export async function updateDetail(id: number, updateData: grammar) {
+  await sleep(1000);
+  const update: grammar | undefined = data.find((item) => item.id == id);
+  if (!update) return false;
+  update.name = updateData.name;
+  update.text = updateData.text;
+  return true;
 }
