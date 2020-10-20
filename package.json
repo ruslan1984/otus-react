@@ -107,6 +107,7 @@
     "eslint-config-ts-react": "^0.2.18",
     "eslint-plugin-prefer-arrow": "^1.2.2",
     "eslint-plugin-react-hooks": "^4.1.2",
+    "faker": "^5.1.0",
     "jest-emotion": "^10.0.32",
     "jest-environment-jsdom-global": "^2.0.4",
     "jest-environment-node": "^26.2.0",
