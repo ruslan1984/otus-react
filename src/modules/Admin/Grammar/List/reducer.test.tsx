@@ -1,27 +1,23 @@
 import { actions, reducer, defaultState, setList } from "./reducer";
-// import { CheckState } from "./types";
+import { Loading } from "./types";
 
 describe("Gramar list reducer", () => {
   it("setList", () => {
     expect(reducer(defaultState, setList())).toEqual({
-      "list": [],
-      "loading": 1,
+      list: [],
+      loading: 1,
     });
   });
-  it("setLoading true", () => {
-    expect(
-      reducer(defaultState, actions.setLoading(true))
-    ).toEqual({
-      "list": [],
-      "loading": true,
+  it("setLoading ok", () => {
+    expect(reducer(defaultState, actions.setLoading(Loading.ok))).toEqual({
+      list: [],
+      loading: 1,
     });
   });
-  it("setLoading false", () => {
-    expect(
-      reducer(defaultState, actions.setLoading(false))
-    ).toEqual({
-      "list": [],
-      "loading": false,
+  it("setLoading start", () => {
+    expect(reducer(defaultState, actions.setLoading(Loading.start))).toEqual({
+      list: [],
+      loading: 0,
     });
   });
 });
