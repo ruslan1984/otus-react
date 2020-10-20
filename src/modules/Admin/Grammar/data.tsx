@@ -1,5 +1,5 @@
 import * as R from "ramda";
-
+import { random, name, lorem } from "faker";
 import { grammar } from "./types";
 import { sleep } from "@/functions";
 
@@ -10,9 +10,9 @@ const data: Array<grammar> = [
     text: "Контент 1",
   },
   {
-    id: 2,
-    name: "Страница 2",
-    text: "Контент 2",
+    id: random.number() + 2,
+    name: name.title(),
+    text: lorem.sentence(),
   },
 ];
 
