@@ -31,3 +31,5 @@ storybook-static
 yarn.lock
 package-lock.json
 .next/
+# stryker temp files
+.stryker-tmp
