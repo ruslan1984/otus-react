@@ -28,13 +28,13 @@ describe("redux saga test plan", () => {
     const logined = true;
     return expectSaga(auth, {
       type: actions.auth.type,
-      payload: { user: "root",password: "root" },
+      payload: data,
     })
       .withReducer(reducer)
       .provide([[call(isAuthorised), auth]])
       .put(actions.loading())
-      .provide([[call(serverLogin, "root", "root"), true]])
-      .call(sessionLogin, "root")
+      .provide([[call(serverLogin, data.user, data.password), true]])
+      .call(sessionLogin, data.user)
       .put(actions.login())
       .hasFinalState({
         user: "",
