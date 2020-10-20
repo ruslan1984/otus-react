@@ -22,7 +22,8 @@ export function* auth(data: ReturnType<typeof actions.auth>) {
     yield put(actions.loading());
     const { user, password } = data.payload;
     if (user.trim() === "" || password.trim() === "") {
-      return put(actions.failed());
+      yield put(actions.zeroData());
+      return false;
     }
     const logined: boolean = yield call(serverLogin, user, password);
     if (logined) {
