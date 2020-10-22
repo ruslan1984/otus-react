@@ -7,10 +7,11 @@ export const RouteApp: FC = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={AuthPage} />
+        <Route exact path="/">
+          Index
+        </Route>
         <Route exact path="/auth" component={AuthPage} />
         <Route exact path="/admin" component={AdminApp} />
-        {/* <Route path="*" render={() => 404} /> */}
       </Switch>
     </BrowserRouter>
   );

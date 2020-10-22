@@ -1,5 +1,6 @@
 import { GrammarList } from "./types";
 import { sleep } from "@/functions";
+import * as R from "ramda";
 
 let data = [
   {
@@ -15,13 +16,8 @@ let data = [
 ];
 
 export async function grammarList() {
-  await sleep(1000);
-  return data.map((item) => {
-    return {
-      id: item.id,
-      name: item.name,
-    };
-  });
+  await sleep(500);
+  return R.project(["id", "name"], data);
 }
 
 export const grammarDetail = (id: number) => {
