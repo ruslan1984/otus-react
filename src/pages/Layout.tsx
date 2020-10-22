@@ -2,25 +2,23 @@ import Header from "./Header";
 import NavBar from "./NavBar";
 
 const leftMenuStyle = {
-  width: "300px"
+  width: "300px",
 };
 const page = {
-  display:"flex"
+  display: "flex",
 };
-const pageStyle= {
+const pageStyle = {
   padding: "0 20px",
-}
+};
 
-const Layout = props => (
+const Layout = (props) => (
   <div>
     <Header />
     <div style={page}>
       <div style={leftMenuStyle}>
-      <NavBar />
+        <NavBar />
       </div>
-      <div style={pageStyle}>
-        {props.children}
-      </div>
+      <div style={pageStyle}>{props.children}</div>
     </div>
   </div>
 );

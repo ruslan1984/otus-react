@@ -10,4 +10,4 @@ export const getLoginModule = (): ISagaModule<typeof reducer> => ({
   },
   sagas: [loginSaga],
 });
-export default  getLoginModule;
+export default getLoginModule;

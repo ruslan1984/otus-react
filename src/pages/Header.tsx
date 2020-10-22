@@ -1,7 +1,7 @@
 const headerStyle = {
   display: "flex",
   padding: "10px",
-  borderBottom: "1px solid #aaa"
+  borderBottom: "1px solid #aaa",
 };
 
 const Header = () => (
