@@ -12,7 +12,6 @@ export const RouteApp: FC = () => {
         </Route>
         <Route exact path="/auth" component={AuthPage} />
         <Route exact path="/admin" component={AdminApp} />
-        {/* <Route path="*" render={() => 404} /> */}
       </Switch>
     </BrowserRouter>
   );
